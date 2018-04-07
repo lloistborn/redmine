@@ -15,3 +15,19 @@ Redmine `redmine:latest`
 
 ### Run using docker compose
 ```docker-compose -f docker-compose.yml up```
+
+# Environment Variables
+
+## Redmine
+When you start the redmine image, you can adjust the configuration of the instance by passing one or more environment variables on the docker run command line. The default user with administrator role is `admin` and password `admin`.
+
+### `REDMINE_DB_POSTGRES`
+These variable allow you to set the hostname or IP address of the PostgreSQL host, respectively. The values are mutually exclusive so it is undefined behavior if both are set. If NO variable is set, the image will fall back to using SQLite.
+
+## Postgresql
+
+### `POSTGRES_PASSWORD`
+This environment variable is recommended for you to use the PostgreSQL image. This environment variable sets the superuser password for PostgreSQL. The default superuser is defined by the `POSTGRES_USER` environment variable.
+
+### `POSTGRES_USER`
+This optional environment variable is used in conjunction with POSTGRES_PASSWORD to set a user and its password. This variable will create the specified user with superuser power and a database with the same name. If it is not specified, then the default user of `postgres` will be used.
