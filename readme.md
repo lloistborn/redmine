@@ -1,7 +1,10 @@
-# Redmine - open source, powerfull project tracker for your team - free!
+# Redmine
 
-to run this project use
+### Official docker images
 
-> docker-compose -f docker-compose.yml up
-or 
-> ./run.sh
+Postgresql `postgres:10-alpine`
+
+Redmine `redmine:latest`
+
+### Run using docker compose
+```docker-compose -f docker-compose.yml up```
